@@ -2,7 +2,6 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id "kotlin-kapt"
-    id 'maven-publish'
 }
 
 android {
@@ -45,22 +44,7 @@ android {
     }
 
 }
-publishing {
-    publications {
-        // 创建一个名为"release"的Maven发布
-        release(MavenPublication) {
-            // 配置基本信息
-            groupId = 'com.xbs'
-            artifactId = 'serialport'
-            version = '1.0.0'
 
-            // 指定发布的变体
-            afterEvaluate {
-                from components.release
-            }
-        }
-    }
-}
 
 dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
